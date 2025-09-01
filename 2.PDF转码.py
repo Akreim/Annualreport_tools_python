@@ -143,14 +143,16 @@ if __name__ == '__main__':
     Flag = True
     if Flag:
         #批量下载并转换年份区间
-        for year in range(2022,2025):
+        for year in range(2020,2024):
+            print(f'当前年份为：{year}')
             # ===========Excel表格路径，建议使用绝对路径，请自行修改！！！！！！！===========
             # 2024年02月14日更新后，此处只需要填写总表的路径，请于网盘或者github中获取总表
-            file_name = f"年报链接_2024【公众号：凌小添】.xlsx"
+            file_name = f"年报链接_2020【qfy】.xlsx"
+            print('代码开始======')
             # 创建存储文件的文件夹路径，如有需要请修改
             pdf_dir = f'年报文件/{year}/pdf年报'
             txt_dir = f'年报文件/{year}/txt年报'
-            main(file_name,pdf_dir,txt_dir,flag_pdf,year)
+            main(file_name, pdf_dir, txt_dir, flag_pdf, year)
             print(f"{year}年年报处理完毕，若报错，请检查后重新运行")
     else:
         #处理单独年份：

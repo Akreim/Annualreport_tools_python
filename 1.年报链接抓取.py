@@ -13,7 +13,7 @@ import re
 import openpyxl
 import time
 
-GZH = "【公众号：凌小添】"
+GZH = "【qfy】"
 def get_report(page_num,date):
     url = "http://www.cninfo.com.cn/new/hisAnnouncement/query"
     headers = {
@@ -188,6 +188,7 @@ if __name__ == '__main__':
     exclude_keywords = ['英文','已取消','摘要']
     # 控制行业，若为空则不控制，仅可从参考内容中选取，中间用英文分号隔开
     # 参考内容："农、林、牧、渔业;电力、热力、燃气及水生产和供应业;建筑业;采矿业;制造业;批发和零售业;交通运输、仓储和邮政业;住宿和餐饮业;信息传输、软件和信息技术服务业;金融业;房地产业;租赁和商务服务业;科学研究和技术服务业;水利、环境和公共设施管理业;居民服务、修理和其他服务业;教育;卫生和社会工作;文化、体育和娱乐业;综合"
+    global trade
     trade = ""
     # 板块控制：深市sz 沪市sh 深主板szmb 沪主板shmb 创业板szcy 科创板shkcp 北交所bj 请按照格式填写
     plate = "sz;sh"
@@ -195,7 +196,7 @@ if __name__ == '__main__':
     global sum
     counter = 1  # 计数器
     setYear = 2023 #设置下载年份
-    Flag = 0  #是否开启批量下载模式
+    Flag = True  #是否开启批量下载模式
     if Flag:
         for setYear in range(2020,2024):
             counter = 1  # 计数器
